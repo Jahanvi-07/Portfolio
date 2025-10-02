@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jahanvi Saini | Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="scroll-smooth antialiased bg-gray-900 text-gray-100 font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-gray-800 text-white shadow-lg">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-semibold tracking-wide text-indigo-400">Jahanvi Saini</h1>
+      <ul class="hidden md:flex space-x-6 font-medium">
+        <li><a href="#home" class="hover:text-indigo-300 transition">Home</a></li>
+        <li><a href="#about" class="hover:text-indigo-300 transition">About</a></li>
+        <li><a href="#projects" class="hover:text-indigo-300 transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-indigo-300 transition">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <!-- Profile -->
+    <img src="portfolio_dp.jpg" alt="Profile photo" class="rounded-full mb-6 w-44 h-44 shadow-2xl border-4 border-indigo-400">
+    <h2 class="text-5xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg">Hi, I'm Jahanvi Saini</h2>
+    <p class="text-2xl md:text-3xl text-indigo-300 mb-4 drop-shadow-sm">Aspiring Software Developer</p>
+    <p class="italic mb-8 text-gray-300 max-w-xl mx-auto drop-shadow-sm">"Turning ideas into efficient, elegant code one project at a time."</p>
+    <a href="Jahanvi Saini_2025" download class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 
+          text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:from-pink-500 hover:to-indigo-500 transition-all duration-300">
+      Download Resume
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-gray-800">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-bold text-center mb-10 text-indigo-400">About Me</h2>
+      <p class="mb-8 text-lg text-gray-300">Aspiring <strong>Computer Science Engineer</strong> pursuing a <strong>Bachelor's degree</strong> at <strong>Government Women's Engineering College</strong>. Strong problem-solving skills and a passion for continuous learning. Building expertise in C, C++, Java, and Python. Eager to apply technical knowledge and a proactive approach to contribute meaningfully to organizational success.</p>
+
+      <h3 class="text-2xl font-semibold mb-4 text-indigo-400">Core Skills</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
+        <span class="bg-gray-700 p-4 rounded-xl shadow text-center hover:bg-indigo-700 transition">C Programming</span>
+        <span class="bg-gray-700 p-4 rounded-xl shadow text-center hover:bg-indigo-700 transition">C++</span>
+        <span class="bg-gray-700 p-4 rounded-xl shadow text-center hover:bg-indigo-700 transition">Java</span>
+        <span class="bg-gray-700 p-4 rounded-xl shadow text-center hover:bg-indigo-700 transition">Python</span>
+        <span class="bg-gray-700 p-4 rounded-xl shadow text-center hover:bg-indigo-700 transition">MS Office</span>
+        <span class="bg-gray-700 p-4 rounded-xl shadow text-center hover:bg-indigo-700 transition">Problem-Solving</span>
+      </div>
+
+      <!-- Education -->
+      <h3 class="text-2xl font-semibold mb-4 text-indigo-400">Education</h3>
+      <ul class="border-l-4 border-indigo-400 pl-6 space-y-6 text-gray-300">
+        <li>
+          <span class="block text-lg font-medium">B.Tech – GWECA, Ajmer</span>
+          <span class="text-sm">2022 – present</span>
+        </li>
+        <li>
+          <span class="block text-lg font-medium">12th – Samrat Public Sr Sec School</span>
+          <span class="text-sm">2021 – 2022</span>
+        </li>
+        <li>
+          <span class="block text-lg font-medium">10th – Army Public School Narangi, Guwahati</span>
+          <span class="text-sm">2019 – 2020</span>
+        </li>
+      </ul>
+
+      <!-- Experience -->
+      <h3 class="text-2xl font-semibold mt-10 mb-4 text-indigo-400">Experience</h3>
+      <ul class="border-l-4 border-indigo-400 pl-6 space-y-6 text-gray-300">
+        <li>
+          <span class="block text-lg font-medium">Intern – Softech Informative Systems (Core Java)</span>
+          <span class="text-sm">Jun 2024 – Aug 2024 · Ajmer</span>
+          <p>As a <strong>Java Developer Intern</strong>, I developed a Java-based application using Core Java and OOP principles, focusing on code modularity and reusability. Improved code efficiency by 20% through debugging, profiling, and applying optimization techniques.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-indigo-400">Projects</h2>
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+
+        <!-- Project Card -->
+        <article class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+          <img src="Clash_of_Spacefighter_Screenshot.jpg" alt="Project screenshot" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2 text-white">Clash of Spacefighter</h3>
+            <p class="text-gray-300 mb-4 text-sm">2D space shooting game developed in Java with enemy AI, shooting mechanics, collision detection, scoring system.</p>
+            <p class="text-gray-400 mb-4 text-sm">Tech: <strong>Java, OOP, Swing</strong></p>
+            <div class="flex space-x-4">
+              <a href="https://github.com/Jahanvi-07/Java-game-development-2025" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">GitHub</a>
+              <a href="#" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add other project cards similarly -->
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-gray-800">
+    <div class="container mx-auto px-4 max-w-xl">
+      <h2 class="text-3xl font-bold text-center mb-12 text-indigo-400">Get in Touch</h2>
+      
+      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6 bg-gray-900 p-8 rounded-xl shadow-lg">
+        <div>
+          <input type="text" id="name" name="name" placeholder="Name" class="w-full p-3 border rounded-lg bg-gray-700 text-gray-100 border-gray-600" />
+        </div>
+        <div>
+          <input type="email" id="email" name="email" placeholder="Email" class="w-full p-3 border rounded-lg bg-gray-700 text-gray-100 border-gray-600" />
+        </div>
+        <div>
+          <textarea id="message" name="message" placeholder="Message" rows="5" class="w-full p-3 border rounded-lg bg-gray-700 text-gray-100 border-gray-600"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition">Send Message</button>
+      </form>
+
+      <div class="text-center mt-8 space-y-2 text-gray-300">
+        <p><strong>Email:</strong> <a href="mailto:jahanvisaini0307@gmail.com" class="hover:underline text-indigo-400">jahanvisaini0307@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/jahanvi-saini-3672a8262" target="_blank" class="hover:underline text-indigo-400">linkedin.com/in/jahanvi-saini-3672a8262</a></p>
+        <p><strong>Portfolio:</strong> <a href="https://github.com/Jahanvi-07.git" target="_blank" class="hover:underline text-indigo-400">github.com/Jahanvi-07</a></p>
+        <p><strong>Phone:</strong> +91 63504 18166</p>
+        <p><strong>Location:</strong> Ajmer, Rajasthan, India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p>&copy; 2025 Jahanvi Saini. Built with ❤ using Tailwind CSS.</p>
+  </footer>
+
+</body>
+</html>
