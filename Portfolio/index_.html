@@ -1,0 +1,931 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jahanvi Saini's portfolio showcasing software development, web applications, AI projects, and data science.">
+  <title>Jahanvi Saini | Developer Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --lavender: #e9e2ff;
+      --blue: #dcecff;
+      --pink: #fce7f3;
+      --mint: #e2f5e9;
+      --peach: #ffeddc;
+      --ink: #302d46;
+      --muted: #6e6b82;
+      --purple: #7865bd;
+      --border: #e8e4f1;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: #faf9fd;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    section[id] {
+      scroll-margin-top: 85px;
+    }
+
+    .site-header {
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(120, 101, 189, 0.13);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      color: #6f5ab5;
+    }
+
+    .nav-link {
+      color: #56516b;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: #806bc7;
+    }
+
+    .hero {
+      background:
+        radial-gradient(ellipse at 10% 20%, rgba(233, 226, 255, 0.95), transparent 40%),
+        radial-gradient(ellipse at 90% 15%, rgba(220, 236, 255, 0.95), transparent 38%),
+        radial-gradient(ellipse at 75% 95%, rgba(252, 231, 243, 0.8), transparent 35%),
+        #faf9fd;
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .profile-image {
+      border: 5px solid white;
+      box-shadow: 0 12px 38px rgba(113, 91, 174, 0.2);
+      object-fit: cover;
+    }
+
+    .gradient-text {
+      background: linear-gradient(100deg, #806bc7, #688ecb, #c17ea7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section-title {
+      color: #37314f;
+      letter-spacing: -0.035em;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+    }
+
+    .soft-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 7px 24px rgba(64, 52, 103, 0.045);
+      transition: transform 0.25s ease, box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .soft-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 32px rgba(91, 73, 143, 0.1);
+      border-color: #d5c9f4;
+    }
+
+    .tint-lavender {
+      background: linear-gradient(145deg, #f2edff, #ffffff 85%);
+    }
+
+    .tint-blue {
+      background: linear-gradient(145deg, #eaf3ff, #ffffff 85%);
+    }
+
+    .tint-pink {
+      background: linear-gradient(145deg, #fff0f7, #ffffff 85%);
+    }
+
+    .tint-mint {
+      background: linear-gradient(145deg, #eaf8ef, #ffffff 85%);
+    }
+
+    .tint-peach {
+      background: linear-gradient(145deg, #fff2e6, #ffffff 85%);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #e8e0fa;
+      border-radius: 999px;
+      background: #f4f0ff;
+      padding: 7px 13px;
+      color: #6754a5;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .primary-button {
+      background: #7865bd;
+      color: white;
+      box-shadow: 0 6px 15px rgba(120, 101, 189, 0.17);
+      transition: all 0.2s ease;
+    }
+
+    .primary-button:hover {
+      background: #6854ac;
+      transform: translateY(-2px);
+    }
+
+    .secondary-button {
+      background: rgba(255, 255, 255, 0.75);
+      color: #64539f;
+      border: 1px solid #d9d0f1;
+      transition: all 0.2s ease;
+    }
+
+    .secondary-button:hover {
+      background: #f0eaff;
+      transform: translateY(-2px);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border-radius: 12px;
+      background: #f0eaff;
+      color: #6652a6;
+      border: 1px solid #e4dafb;
+      padding: 10px 14px;
+      font-weight: 650;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      align-self: flex-start;
+    }
+
+    .project-link:hover {
+      background: #e5dcff;
+      transform: translateY(-1px);
+    }
+
+    .experience-date {
+      display: inline-block;
+      background: #f0eaff;
+      color: #705bb0;
+      border-radius: 999px;
+      padding: 5px 11px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .contact-section {
+      background:
+        radial-gradient(ellipse at 10% 20%, #e9e2ff, transparent 45%),
+        radial-gradient(ellipse at 90% 80%, #dcecff, transparent 45%),
+        #f8f5ff;
+    }
+
+    .menu-button {
+      border: 1px solid #e1d9f4;
+      color: #6e5ab0;
+      background: #f6f2ff;
+    }
+
+    .menu-button:hover {
+      background: #ece5ff;
+    }
+
+    .footer {
+      background: #f1eef9;
+      border-top: 1px solid #e5def2;
+      color: #77718d;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- Navigation -->
+  <header class="site-header fixed top-0 z-50 w-full">
+    <nav class="container mx-auto flex items-center justify-between gap-4 px-5 py-4">
+      <a href="#home" class="brand text-xl font-extrabold tracking-tight">
+        Jahanvi Saini<span class="text-pink-400">.</span>
+      </a>
+
+      <button
+        id="menuButton"
+        class="menu-button rounded-xl px-4 py-2 font-semibold md:hidden"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        Menu ☰
+      </button>
+
+      <ul
+        id="navLinks"
+        class="absolute left-0 top-full hidden w-full flex-col gap-4 border-b border-purple-100 bg-white/95 p-5 font-medium shadow-lg backdrop-blur-lg md:static md:flex md:w-auto md:flex-row md:items-center md:gap-6 md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+      >
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#education">Education</a></li>
+        <li><a class="nav-link" href="#experience">Experience</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section
+      id="home"
+      class="hero relative flex min-h-screen items-center justify-center overflow-hidden px-6 pb-16 pt-32 text-center"
+    >
+      <div class="hero-orb left-[-70px] top-36 h-52 w-52 bg-purple-200"></div>
+      <div class="hero-orb right-[-55px] top-52 h-64 w-64 bg-blue-200"></div>
+      <div class="hero-orb bottom-[-70px] left-1/3 h-56 w-56 bg-pink-200"></div>
+
+      <div class="relative z-10 mx-auto max-w-4xl">
+        <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-white bg-white/75 px-4 py-2 text-sm font-semibold text-purple-700 shadow-sm">
+          <span class="h-2 w-2 rounded-full bg-green-400"></span>
+          CSE Graduate · Aspiring Software Developer
+        </div>
+
+        <img
+          src="profile.png"
+          alt="Jahanvi Saini"
+          class="profile-image mx-auto mb-8 h-40 w-40 rounded-full sm:h-44 sm:w-44"
+        >
+
+        <h1 class="mb-5 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl">
+          Hi, I'm <span class="gradient-text">Jahanvi Saini</span>
+        </h1>
+
+        <p class="mx-auto mb-5 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
+          I enjoy building useful web applications, exploring AI-powered tools,
+          and turning ideas into thoughtful digital experiences.
+        </p>
+
+        <p class="mb-9 text-slate-500">
+          Curious mind. Creative approach. Continuous learning.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-3">
+          <a
+            href="Jahanvi_Saini_2026.pdf"
+            download
+            class="primary-button rounded-full px-6 py-3 font-semibold"
+          >
+            Download Resume ↓
+          </a>
+
+          <a
+            href="#projects"
+            class="secondary-button rounded-full px-6 py-3 font-semibold"
+          >
+            Explore Projects ↗
+          </a>
+
+          <a
+            href="https://github.com/Jahanvi-07"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="secondary-button rounded-full px-6 py-3 font-semibold"
+          >
+            GitHub Profile ↗
+          </a>
+        </div>
+
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          <span class="pill">Web Development</span>
+          <span class="pill" style="background:#eaf3ff;border-color:#d8e8ff;color:#5477a8">Java</span>
+          <span class="pill" style="background:#fff0f7;border-color:#f8dceb;color:#a35f86">AI & Data</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="px-6 py-20">
+      <div class="container mx-auto max-w-5xl">
+        <div class="soft-card tint-lavender p-8 md:p-12">
+          <div class="mb-7 text-center">
+            <p class="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-purple-500">
+              A little about me
+            </p>
+            <h2 class="section-title text-3xl font-extrabold md:text-4xl">
+              About Me
+            </h2>
+          </div>
+
+          <p class="mx-auto max-w-3xl text-center text-base leading-8 text-slate-600 md:text-lg">
+            I'm a Computer Science Engineering graduate interested in software
+            development, frontend experiences, backend APIs, and AI-powered
+            applications. I enjoy learning by building projects, solving
+            practical problems, and improving my skills through hands-on work.
+            I aim to create digital products that are both useful and easy to use.
+          </p>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <span class="pill">Quick Learner</span>
+            <span class="pill" style="background:#eaf3ff;border-color:#d8e8ff;color:#5477a8">Problem Solving</span>
+            <span class="pill" style="background:#eaf8ef;border-color:#d4eedc;color:#4e8762">Adaptability</span>
+            <span class="pill" style="background:#fff0f7;border-color:#f8dceb;color:#a35f86">Teamwork</span>
+            <span class="pill" style="background:#fff2e6;border-color:#f8dfc7;color:#a36e43">Time Management</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="bg-[#f0f4ff] px-6 py-20">
+      <div class="container mx-auto max-w-6xl">
+        <div class="mb-12 text-center">
+          <p class="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-purple-500">
+            What I work with
+          </p>
+          <h2 class="section-title text-3xl font-extrabold md:text-4xl">
+            Technical Skills
+          </h2>
+          <p class="section-subtitle mt-4">
+            Technologies and concepts I've explored through learning and projects.
+          </p>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="soft-card tint-lavender p-6">
+            <div class="mb-4 text-3xl">⌘</div>
+            <h3 class="mb-3 text-xl font-bold text-purple-800">Programming</h3>
+            <p class="leading-7 text-slate-600">Java · JavaScript · C · C++</p>
+          </article>
+
+          <article class="soft-card tint-blue p-6">
+            <div class="mb-4 text-3xl">✧</div>
+            <h3 class="mb-3 text-xl font-bold text-blue-800">Frontend</h3>
+            <p class="leading-7 text-slate-600">
+              HTML5 · CSS3 · React · Tailwind CSS · Responsive UI · UI/UX
+            </p>
+          </article>
+
+          <article class="soft-card tint-pink p-6">
+            <div class="mb-4 text-3xl">↔</div>
+            <h3 class="mb-3 text-xl font-bold text-pink-800">Backend</h3>
+            <p class="leading-7 text-slate-600">
+              Node.js · Express.js · REST APIs · JWT · bcrypt
+            </p>
+          </article>
+
+          <article class="soft-card tint-mint p-6">
+            <div class="mb-4 text-3xl">▤</div>
+            <h3 class="mb-3 text-xl font-bold text-green-800">Databases</h3>
+            <p class="leading-7 text-slate-600">MongoDB · MySQL · JDBC</p>
+          </article>
+
+          <article class="soft-card tint-peach p-6">
+            <div class="mb-4 text-3xl">✳</div>
+            <h3 class="mb-3 text-xl font-bold text-orange-800">AI & Data</h3>
+            <p class="leading-7 text-slate-600">
+              Python · Pandas · Scikit-learn · AI API Integration
+            </p>
+          </article>
+
+          <article class="soft-card tint-blue p-6">
+            <div class="mb-4 text-3xl">⌘</div>
+            <h3 class="mb-3 text-xl font-bold text-blue-800">Tools & Concepts</h3>
+            <p class="leading-7 text-slate-600">
+              Git · GitHub · VS Code · OOP · API Integration · WebSockets
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="px-6 py-20">
+      <div class="container mx-auto max-w-4xl">
+        <div class="mb-12 text-center">
+          <p class="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-purple-500">
+            My academic journey
+          </p>
+          <h2 class="section-title text-3xl font-extrabold md:text-4xl">
+            Education
+          </h2>
+        </div>
+
+        <div class="space-y-5">
+          <article class="soft-card tint-lavender p-6 md:p-8">
+            <div class="flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
+              <div>
+                <span class="pill mb-4">Bachelor's Degree</span>
+                <h3 class="text-xl font-bold text-slate-800 md:text-2xl">
+                  B.Tech — Computer Science Engineering
+                </h3>
+                <p class="mt-2 text-slate-600">
+                  Government Women's Engineering College, Ajmer
+                </p>
+                <p class="mt-1 text-slate-500">Ajmer, Rajasthan</p>
+              </div>
+              <span class="experience-date">2022 – 2026</span>
+            </div>
+          </article>
+
+          <article class="soft-card tint-blue p-6 md:p-8">
+            <div class="flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
+              <div>
+                <span class="pill mb-4" style="background:#eaf3ff;border-color:#d8e8ff;color:#5477a8">
+                  Senior Secondary
+                </span>
+                <h3 class="text-xl font-bold text-slate-800 md:text-2xl">
+                  Class XII — CBSE
+                </h3>
+                <p class="mt-2 text-slate-600">
+                  Samrat Public Senior Secondary School
+                </p>
+                <p class="mt-1 text-slate-500">Ajmer, Rajasthan</p>
+              </div>
+              <span class="experience-date" style="background:#eaf3ff;color:#5477a8">
+                2021 – 2022
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="bg-[#fff3f8] px-6 py-20">
+      <div class="container mx-auto max-w-5xl">
+        <div class="mb-12 text-center">
+          <p class="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-pink-500">
+            Learning through experience
+          </p>
+          <h2 class="section-title text-3xl font-extrabold md:text-4xl">
+            Internship Experience
+          </h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <article class="soft-card p-6 md:p-7">
+            <span class="experience-date">Sep 2025 – Oct 2025</span>
+            <h3 class="mt-4 text-xl font-bold text-slate-800">
+              Full Stack Development Intern
+            </h3>
+            <p class="mt-2 font-semibold text-purple-700">
+              Cognifyz Technologies
+            </p>
+            <p class="mb-4 text-sm text-slate-500">Remote</p>
+            <p class="leading-7 text-slate-600">
+              Worked on web application features using React, Node.js,
+              Express.js, databases, REST APIs, and Git.
+            </p>
+            <p class="mt-4 text-sm leading-6 text-slate-500">
+              React · Node.js · Express.js · MongoDB · MySQL · Git
+            </p>
+          </article>
+
+          <article class="soft-card p-6 md:p-7">
+            <span class="experience-date" style="background:#eaf3ff;color:#5477a8">
+              Jun 2025 – Aug 2025
+            </span>
+            <h3 class="mt-4 text-xl font-bold text-slate-800">
+              Web Development Intern
+            </h3>
+            <p class="mt-2 font-semibold text-blue-700">
+              Infotact Solutions
+            </p>
+            <p class="mb-4 text-sm text-slate-500">Associate L1 · Remote</p>
+            <p class="leading-7 text-slate-600">
+              Practiced responsive web development and application integration
+              using modern frontend and backend technologies.
+            </p>
+            <p class="mt-4 text-sm leading-6 text-slate-500">
+              React · JavaScript · Node.js · MongoDB · Git
+            </p>
+          </article>
+
+          <article class="soft-card tint-mint p-6 md:col-span-2 md:p-7">
+            <span class="experience-date" style="background:#e4f5e9;color:#4e8762">
+              Jun 2024 – Aug 2024
+            </span>
+            <h3 class="mt-4 text-xl font-bold text-slate-800">
+              Core Java Development Intern
+            </h3>
+            <p class="mt-2 font-semibold text-green-800">
+              Softech Informatic Systems
+            </p>
+            <p class="mb-4 text-sm text-slate-500">On-site</p>
+            <p class="leading-7 text-slate-600">
+              Worked with object-oriented programming, Java desktop application
+              development, exception handling, and database connectivity.
+            </p>
+            <p class="mt-4 text-sm leading-6 text-slate-500">
+              Java · OOP · Swing · JDBC · MySQL
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="px-6 py-20">
+      <div class="container mx-auto max-w-7xl">
+        <div class="mb-12 text-center">
+          <p class="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-purple-500">
+            Things I've created
+          </p>
+          <h2 class="section-title text-3xl font-extrabold md:text-4xl">
+            Featured Projects
+          </h2>
+          <p class="section-subtitle mx-auto mt-4 max-w-2xl leading-7">
+            A collection of projects across full-stack development, AI,
+            productivity, frontend design, and data science.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+          <!-- 1 -->
+          <article class="soft-card tint-lavender flex flex-col p-6">
+            <span class="pill mb-4 self-start">AI · Full Stack</span>
+            <h3 class="mb-3 text-xl font-bold">SmartPreps</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              An AI-powered study preparation platform designed to help learners
+              prepare and organize their study workflow.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              React · Node.js · Express · MongoDB
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/SmartPreps-1" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+          <!-- 2 -->
+          <article class="soft-card tint-blue flex flex-col p-6">
+            <span class="pill mb-4 self-start" style="background:#eaf3ff;border-color:#d8e8ff;color:#5477a8">
+              AI · Developer Tools
+            </span>
+            <h3 class="mb-3 text-xl font-bold">AI Test Generator</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              An AI-powered tool designed to generate test cases from code,
+              functions, or text descriptions.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              JavaScript · Node.js · Express · MongoDB · AI API
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/AiTest-generator" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+          <!-- 3 -->
+          <article class="soft-card tint-pink flex flex-col p-6">
+            <span class="pill mb-4 self-start" style="background:#fff0f7;border-color:#f8dceb;color:#a35f86">
+              Full Stack · Food Tech
+            </span>
+            <h3 class="mb-3 text-xl font-bold">Home-Cooked Food Delivery</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              A food delivery platform concept connecting customers with
+              home-cooked meals and ordering functionality.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              HTML · CSS · JavaScript · Node.js · Express · MongoDB
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/On_Demand_Home-cooked_Food_Delivery_Platform" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+          <!-- 4 -->
+          <article class="soft-card tint-mint flex flex-col p-6">
+            <span class="pill mb-4 self-start" style="background:#eaf8ef;border-color:#d4eedc;color:#4e8762">
+              Collaboration · Web
+            </span>
+            <h3 class="mb-3 text-xl font-bold">Collaborative Editor</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              A collaborative editing project focused on shared content
+              creation and an interactive editing experience.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              Web Development · Collaboration
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/collaborative-editor" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+          <!-- 5 -->
+          <article class="soft-card tint-peach flex flex-col p-6">
+            <span class="pill mb-4 self-start" style="background:#fff2e6;border-color:#f8dfc7;color:#a36e43">
+              Frontend · UI
+            </span>
+            <h3 class="mb-3 text-xl font-bold">Coffee Bliss</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              A coffee-themed website showcasing visual design, page layout,
+              and frontend styling.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              HTML · CSS · JavaScript
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/Coffee_Bliss-webpage" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+          <!-- 6 -->
+          <article class="soft-card tint-lavender flex flex-col p-6">
+            <span class="pill mb-4 self-start">Backend · Security</span>
+            <h3 class="mb-3 text-xl font-bold">Authify</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              An authentication-focused backend project exploring secure
+              login, token-based authorization, and password hashing.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              Node.js · JWT · MongoDB · bcrypt
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/authify" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+          <!-- 7 -->
+          <article class="soft-card tint-blue flex flex-col p-6">
+            <span class="pill mb-4 self-start" style="background:#eaf3ff;border-color:#d8e8ff;color:#5477a8">
+              Real-Time · Web
+            </span>
+            <h3 class="mb-3 text-xl font-bold">Chat Application</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              A real-time messaging project focused on interactive communication
+              between users.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              JavaScript · Node.js · WebSockets
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/chat-application" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+          <!-- 8 -->
+          <article class="soft-card tint-mint flex flex-col p-6">
+            <span class="pill mb-4 self-start" style="background:#eaf8ef;border-color:#d4eedc;color:#4e8762">
+              Machine Learning · Data
+            </span>
+            <h3 class="mb-3 text-xl font-bold">Loan Default Prediction</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              A machine learning project using loan-related data to explore
+              prediction and classification workflows.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              Python · Pandas · Scikit-learn
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/Loan-Default-Prediction-System" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+          <!-- 9 -->
+          <article class="soft-card tint-pink flex flex-col p-6">
+            <span class="pill mb-4 self-start" style="background:#fff0f7;border-color:#f8dceb;color:#a35f86">
+              Data Analytics · NLP
+            </span>
+            <h3 class="mb-3 text-xl font-bold">Sentiment Analysis</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              A text analysis project that evaluates reviews and classifies
+              sentiment to explore patterns in written feedback.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              Python · Pandas · Text Analysis
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/CodeAlpha_SentimentAnalysis" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+          <!-- 10 -->
+          <article class="soft-card tint-peach flex flex-col p-6">
+            <span class="pill mb-4 self-start" style="background:#fff2e6;border-color:#f8dfc7;color:#a36e43">
+              Browser Extension
+            </span>
+            <h3 class="mb-3 text-xl font-bold">Chrome Time Tracker</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              A browser extension project focused on tracking website usage
+              and encouraging productivity awareness.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              JavaScript · Chrome Extension APIs
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/Chrome-extension-for-time-tracking" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+          <!-- 11 -->
+          <article class="soft-card tint-lavender flex flex-col p-6">
+            <span class="pill mb-4 self-start">Backend · CRUD</span>
+            <h3 class="mb-3 text-xl font-bold">User Management</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              A user management project focused on organizing user information
+              and practicing common data management workflows.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              Backend Development · Database
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/User-Management" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+          <!-- 12 -->
+          <article class="soft-card tint-blue flex flex-col p-6">
+            <span class="pill mb-4 self-start" style="background:#eaf3ff;border-color:#d8e8ff;color:#5477a8">
+              API Integration · Frontend
+            </span>
+            <h3 class="mb-3 text-xl font-bold">Weather App</h3>
+            <p class="mb-4 flex-1 leading-7 text-slate-600">
+              A weather application that uses an external weather API to
+              display current conditions for a selected location.
+            </p>
+            <p class="mb-5 text-sm leading-6 text-slate-500">
+              HTML · CSS · JavaScript · Weather API
+            </p>
+            <a class="project-link" href="https://github.com/Jahanvi-07/API-Weather-Integration" target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+        </div>
+
+        <p class="mt-8 text-center text-sm leading-6 text-slate-500">
+          Project descriptions are summaries. Make sure each repository is public
+          and that its description and technology stack match the actual code.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section px-6 py-20">
+      <div class="container mx-auto max-w-3xl">
+        <div class="soft-card p-8 text-center md:p-12">
+          <p class="mb-2 text-sm font-bold uppercase tracking-[0.2em] text-purple-500">
+            Have an opportunity?
+          </p>
+
+          <h2 class="section-title mb-5 text-3xl font-extrabold md:text-4xl">
+            Let's Connect
+          </h2>
+
+          <p class="mx-auto mb-8 max-w-xl leading-7 text-slate-600">
+            I'm open to opportunities to learn, collaborate, and contribute
+            to meaningful software projects. Feel free to reach out!
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-3">
+            <a
+              href="mailto:jahanvisaini27@gmail.com"
+              class="primary-button rounded-full px-6 py-3 font-semibold"
+            >
+              Email Me ✉
+            </a>
+
+            <a
+              href="https://linkedin.com/in/jahanvi-saini-3672a8262"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="secondary-button rounded-full px-6 py-3 font-semibold"
+            >
+              LinkedIn ↗
+            </a>
+
+            <a
+              href="https://github.com/Jahanvi-07"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="secondary-button rounded-full px-6 py-3 font-semibold"
+            >
+              GitHub ↗
+            </a>
+          </div>
+
+          <p class="mt-6 text-sm text-slate-500">
+            jahanvisaini27@gmail.com
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer px-6 py-6 text-center text-sm">
+    <p>
+      © <span id="year"></span> Jahanvi Saini.
+      Built with HTML, Tailwind CSS & JavaScript.
+    </p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    // Mobile navigation toggle
+    menuButton.addEventListener("click", () => {
+      const isHidden = navLinks.classList.toggle("hidden");
+
+      navLinks.classList.toggle("flex", !isHidden);
+      menuButton.setAttribute("aria-expanded", String(!isHidden));
+      menuButton.textContent = isHidden ? "Menu ☰" : "Close ✕";
+    });
+
+    // Close mobile menu after selecting a link
+    navLinks.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", function (event) {
+        const targetId = this.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        if (window.innerWidth < 768) {
+          navLinks.classList.add("hidden");
+          navLinks.classList.remove("flex");
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.textContent = "Menu ☰";
+        }
+
+        // Offset scrolling so the fixed header does not cover the section
+        const header = document.querySelector("header");
+        const headerHeight = header ? header.offsetHeight : 0;
+
+        const targetPosition =
+          target.getBoundingClientRect().top +
+          window.scrollY -
+          headerHeight -
+          10;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth"
+        });
+
+        history.replaceState(null, "", "#" + targetId);
+      });
+    });
+
+    // Keep the layout correct when resizing from mobile to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        navLinks.classList.remove("hidden");
+        navLinks.classList.add("flex");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "Menu ☰";
+      } else if (menuButton.getAttribute("aria-expanded") !== "true") {
+        navLinks.classList.add("hidden");
+        navLinks.classList.remove("flex");
+      }
+    });
+
+    // Automatically update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
